@@ -4,26 +4,42 @@ using UnityEngine;
 
 public class FlowerGrowth : MonoBehaviour
 {
-    public float timer = 0f;
-    public float growTime = 6f;
-    public float maxSize = 2f;
+    private float timer = 0f;
+    private float growTime = 6f;
+    private float maxSize = 1f;
 
-    public bool isMaxSize = false;
+    //height
+    public float maxHeight = -0.5f;
+
+    private bool isMaxSize = false;
 
     void Start()
     {
-        
+        if (isMaxSize == false)
+        {
+            StartCoroutine(Grow());
+        }
     }
 
-   /* private IEnumerator Grow()
+    private IEnumerator Grow()
     {
-        Vector2 startSize = transform.localScale;
+        Vector2 startScale = transform.localScale;
         Vector2 maxScale = new Vector2(maxSize, maxSize);
+
+        //height
+        Vector2 startHeight = transform.position;
+        Vector2 finalHeight = new Vector2(transform.position.x, maxHeight);
+
 
         do
         {
-
+            transform.position = Vector3.Lerp(startHeight, finalHeight, timer / growTime);
+            transform.localScale = Vector3.Lerp(startScale, maxScale, timer / growTime);
+            timer += Time.deltaTime;
+            yield return null;
         }
-        while ();
-    } */
+        while(timer < growTime);
+
+        isMaxSize = true;
+    } 
 }

@@ -66,6 +66,9 @@
     <Compile Include="Assets\Scripts\GrabConroller.cs" />
     <Compile Include="Assets\Scripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\FlowerGrowth.cs" />
+    <Compile Include="Assets\Scripts\SeedPlant.cs" />
+    <Compile Include="Assets\Scripts\GrowHere.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

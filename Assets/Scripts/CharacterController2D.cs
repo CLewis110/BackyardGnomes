@@ -18,6 +18,11 @@ public class CharacterController2D : MonoBehaviour
     public LayerMask whatIsGround;
 
     private Rigidbody2D rb;
+
+    //Seed prefab
+    public GameObject seed;
+    public Transform dropPoint;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -34,17 +39,6 @@ public class CharacterController2D : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-        //Toggle run on and off
-        /*if (Input.GetKeyDown(KeyCode.LeftShift))
-            isRunning = false;
-        if(Input.GetKeyUp(KeyCode.LeftShift))
-            isRunning = true;
-
-        if (isRunning)
-            moveSpeed = 15;
-        else 
-            moveSpeed = 5;
-        */
 
         //Read movement
         var movement = Input.GetAxis("Horizontal");
@@ -65,6 +59,10 @@ public class CharacterController2D : MonoBehaviour
 
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * moveSpeed;
 
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            DropSeed();
+        }
 
         //Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
@@ -76,6 +74,11 @@ public class CharacterController2D : MonoBehaviour
     void Jump()
     {
         rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+    }
+
+    void DropSeed()
+    {
+        Instantiate(seed, dropPoint.transform.position, dropPoint.transform.rotation);
     }
 
 
