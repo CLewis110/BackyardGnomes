@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4971638836303677398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4569, y: -0.7983, z: 0}
+  m_LocalPosition: {x: 1.4569, y: -1.87, z: 0}
   m_LocalScale: {x: 3.0916643, y: 6.102615, z: 2.7656}
   m_Children: []
   m_Father: {fileID: 4971638836796090247}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
-  m_Color: {r: 0.2028302, g: 0.23595615, b: 1, a: 1}
+  m_Color: {r: 0.18062477, g: 0.21031317, b: 0.9339623, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,7 +107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4971638836342644103}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.4899998, y: 0, z: 0}
+  m_LocalPosition: {x: 1.4899998, y: -1.0717, z: 0}
   m_LocalScale: {x: 1.2510923, y: 1.2510923, z: 1.2510922}
   m_Children: []
   m_Father: {fileID: 4971638836796090247}
@@ -173,6 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4971638836796090247}
+  - component: {fileID: 7998080726821742262}
   m_Layer: 0
   m_Name: Recycling Bin
   m_TagString: Untagged
@@ -196,3 +197,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &7998080726821742262
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4971638836796090246}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.4734802, y: -1.9219356}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.0073547, y: 6.0397425}
+  m_EdgeRadius: 0

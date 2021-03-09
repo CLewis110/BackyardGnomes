@@ -69,6 +69,8 @@
     <Compile Include="Assets\Scripts\SeedPlant.cs" />
     <Compile Include="Assets\Scripts\GrowHere.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\GameMaster.cs" />
+    <Compile Include="Assets\Scripts\PleaseRecycle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
