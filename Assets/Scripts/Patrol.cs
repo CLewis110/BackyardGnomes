@@ -19,6 +19,7 @@ public class Patrol : MonoBehaviour
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
+        //Change to turn at fences instead of gaps 
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetect.position, Vector2.down, distance);
         if(groundInfo.collider == false)
         {
@@ -34,6 +35,7 @@ public class Patrol : MonoBehaviour
             }
         }
 
+        //Add check for if !hiding
         if(isInRange && player.GetComponent<CharacterController2D>().isRunning)
         {
             StopAllCoroutines();

@@ -5,11 +5,12 @@ using UnityEngine;
 public class CharacterController2D : MonoBehaviour
 {
     //Movement
-    public float moveSpeed = 15;
-    public float jumpForce = 5;
+    private float moveSpeed = 15;
+    public float jumpForce = 5f;
     public bool isFacingRight = true;
     public bool isRunning = false;
 
+    //Hiding
     
     //Ground Check
     public bool isGrounded;
@@ -17,7 +18,7 @@ public class CharacterController2D : MonoBehaviour
     public float groundCheckRadius;
     public LayerMask whatIsGround;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     //Seed prefab
     public GameObject seed;
@@ -50,11 +51,19 @@ public class CharacterController2D : MonoBehaviour
         {
             isRunning = true;
             if(movement > 0)
+            {
+                isFacingRight = true;
                 transform.eulerAngles = new Vector3(0, 0, 0);
-            //transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+                //transform.localScale = new Vector2(Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            }
+
             if (movement < 0)
+            {
+                isFacingRight = false;
                 transform.eulerAngles = new Vector3(0, -180, 0);
-            //transform.localScale = new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
+                //transform.localScale = new Vector2(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            }
+
         }
 
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * moveSpeed;
@@ -68,6 +77,7 @@ public class CharacterController2D : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
             Jump();
 
+        //Check hiding requirements
 
     }
 

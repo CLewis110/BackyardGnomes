@@ -54,5 +54,6 @@ public class CamFollow : MonoBehaviour
             }
             timeToSearch = Time.time + 0.5f;
         }
+        return;
     }            
 }
