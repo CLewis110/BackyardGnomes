@@ -6,7 +6,11 @@ public class PleaseRecycle : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Recycle();
+        if(collision.gameObject.tag == "Recyclable")
+        {
+            Recycle();
+        }
+
     }
     void Recycle()
     {

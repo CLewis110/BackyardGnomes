@@ -797,7 +797,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0060310364, y: 3.3262644}
+  m_Offset: {x: -0.10875082, y: 3.3262644}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -808,7 +808,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.58863, y: 8.652529}
+  m_Size: {x: 15.822209, y: 8.652529}
   m_EdgeRadius: 0
 --- !u!212 &372714243
 SpriteRenderer:
@@ -3786,7 +3786,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013648987, y: 0.7645416}
+  m_Offset: {x: 0.030260086, y: 1.4954137}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3797,7 +3797,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.594947, y: 3.5290833}
+  m_Size: {x: 6.289239, y: 3.4626405}
   m_EdgeRadius: 0
 --- !u!212 &1423127663
 SpriteRenderer:
@@ -5888,6 +5888,10 @@ PrefabInstance:
       propertyPath: dialogue.sentences.Array.data[0]
       value: What was that??!
       objectReference: {fileID: 0}
+    - target: {fileID: 219589788, guid: c7bf9f7aaade68048a97fb04f25df0c4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2987795621697188788, guid: c7bf9f7aaade68048a97fb04f25df0c4, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -6029,6 +6033,10 @@ PrefabInstance:
     - target: {fileID: 4971638836796090246, guid: 5e6c91e7d2cd6444399c44cc958370ec, type: 3}
       propertyPath: m_Name
       value: Recycling Bin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4971638836796090246, guid: 5e6c91e7d2cd6444399c44cc958370ec, type: 3}
+      propertyPath: m_TagString
+      value: Recyclable
       objectReference: {fileID: 0}
     - target: {fileID: 4971638836796090247, guid: 5e6c91e7d2cd6444399c44cc958370ec, type: 3}
       propertyPath: m_RootOrder
