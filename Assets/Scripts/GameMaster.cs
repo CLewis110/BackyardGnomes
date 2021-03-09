@@ -29,4 +29,8 @@ public class GameMaster : MonoBehaviour
         Destroy(player.gameObject);
         gm.StartCoroutine(gm.RespawnPlayer());
     }
+
+
+    //Keep track of score
+
 }
