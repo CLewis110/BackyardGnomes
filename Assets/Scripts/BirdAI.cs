@@ -28,30 +28,122 @@ public class BirdAI : MonoBehaviour
 
     private int currentWaypoint = 0;
 
+    private bool searchingForPlayer = false;
+    private bool isInRange = false;
+    public bool flowersInRange = false;
+    public bool playerInRange = false;
+
+    public GameObject currentFlower;
+
+    public GameObject sResult;
+
     void Start()
     {
+        target = null;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
+        /*
         if(target == null)
         {
-            Debug.Log("No player found.");
+            if(!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
             return;
         }
 
         //Creates 
         seeker.StartPath(transform.position, target.position, OnPathComplete);
 
-        StartCoroutine(UpdatePath());
+        StartCoroutine(UpdatePath()); 
+        */
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Flower")
+        {
+            currentFlower = collision.gameObject;
+            target = collision.transform;
+        }
+
+        if(collision.gameObject.tag == "Player" && currentFlower == null)
+        {
+            playerInRange = true;
+            target = collision.transform;
+        }
+
+
+        /*
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Flower")
+        {
+
+            if (target == null)
+            {
+                if (!searchingForPlayer)
+                {
+                    searchingForPlayer = true;
+                    StartCoroutine(SearchForPlayer());
+                }
+                return;
+            }
+        */
+            //Creates 
+            seeker.StartPath(transform.position, target.position, OnPathComplete);
+
+            StartCoroutine(UpdatePath());
+        /*}*/
+
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Flower")
+        {
+            flowersInRange = false;
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            playerInRange = false;
+        }
+    }
+
+    IEnumerator SearchForPlayer()
+    {
+
+        sResult = GameObject.FindGameObjectWithTag("Player");
+
+        if(sResult == null)
+        {
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(SearchForPlayer());
+        }
+        else
+        {
+            searchingForPlayer = false;
+            target = sResult.transform;
+            StartCoroutine(UpdatePath());
+            yield return null;
+        }
+
     }
 
     IEnumerator UpdatePath()
     {
-        if(target == null)
+        if (target == null)
         {
-            //TODO: Search for player
-            yield return false;
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
+            yield return null;
         }
+
 
         seeker.StartPath(transform.position, target.position, OnPathComplete);
 
@@ -61,7 +153,7 @@ public class BirdAI : MonoBehaviour
 
     public void OnPathComplete(Path p)
     {
-        Debug.Log("Path found. Any errors? " + p.error);
+        //Debug.Log("Path found. Any errors? " + p.error);
         if(!p.error)
         {
             path = p;
@@ -71,8 +163,17 @@ public class BirdAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(target == null)
+
+        if (target == null && isInRange == true)
+        {
+            if (!searchingForPlayer)
+            {
+                searchingForPlayer = true;
+                StartCoroutine(SearchForPlayer());
+            }
             return;
+        }
+        
 
         if (path == null)
             return;
@@ -82,7 +183,6 @@ public class BirdAI : MonoBehaviour
             if (pathIsEnded)
                 return;
 
-            Debug.Log("End of path.");
             pathIsEnded = true;
             return;
         }
@@ -90,6 +190,13 @@ public class BirdAI : MonoBehaviour
 
         //Direction to next waypoint
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        
+        //Face other way
+        if(dir.y > 0)
+            transform.eulerAngles = new Vector3(0, -180, 0);
+        else
+            transform.eulerAngles = new Vector3(0, 0, 0);
+    
         dir *= speed * Time.fixedDeltaTime;
 
         //Move AI

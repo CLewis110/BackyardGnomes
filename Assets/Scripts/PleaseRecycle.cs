@@ -10,7 +10,6 @@ public class PleaseRecycle : MonoBehaviour
         {
             Recycle();
         }
-
     }
     void Recycle()
     {

@@ -11,6 +11,7 @@ public class CharacterController2D : MonoBehaviour
     public bool isRunning = false;
 
     //Hiding
+    public bool isHiding = false;
     
     //Ground Check
     public bool isGrounded;

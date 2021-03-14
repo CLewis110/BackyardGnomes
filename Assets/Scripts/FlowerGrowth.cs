@@ -7,11 +7,13 @@ public class FlowerGrowth : MonoBehaviour
     private float timer = 0f;
     private float growTime = 6f;
     private float maxSize = 1f;
+    public float flowerLife = 2f;
 
     //height
     public float maxHeight = -0.5f;
 
     private bool isMaxSize = false;
+
 
     void Start()
     {
@@ -21,6 +23,15 @@ public class FlowerGrowth : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Lawn Mower")
+        {
+            //Debug.Log("Ouch!");
+            FlowerHit();
+        }
+
+    }
     private IEnumerator Grow()
     {
         Vector2 startScale = transform.localScale;
@@ -42,4 +53,21 @@ public class FlowerGrowth : MonoBehaviour
 
         isMaxSize = true;
     } 
+
+    public void FlowerDeath()
+    {
+        Destroy(this.gameObject);
+    }
+
+    public void FlowerHit()
+    {
+        if (flowerLife > 0)
+        {
+            flowerLife -= 1;
+            if (flowerLife <= 0)
+                FlowerDeath();
+        }
+        else
+            FlowerDeath();
+    }
 }

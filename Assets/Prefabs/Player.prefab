@@ -128,7 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654a528db4ddbdd4682e8180a4bd0079, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
   jumpForce: 60
   isFacingRight: 1
   isRunning: 1
@@ -138,6 +137,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  rb: {fileID: 0}
   seed: {fileID: 4888363611061001817, guid: 3dc81ef452a5fde4f840eb248c0ca8c5, type: 3}
   dropPoint: {fileID: 1125938559219584874}
 --- !u!114 &1125938558829315457
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 041e8cfafe87c6c4f9db5751ff527fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cc: {fileID: 0}
   grabDetect: {fileID: 1125938559219584874}
   boxHolder: {fileID: 1125938558257049802}
   rayDist: 0.45
@@ -278,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125938559219584869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.475, y: 0, z: 0}
+  m_LocalPosition: {x: 0.48, y: -0.194, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1125938558829315517}

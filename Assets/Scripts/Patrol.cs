@@ -7,7 +7,7 @@ public class Patrol : MonoBehaviour
     public float speed;
     public float distance;
 
-    public bool isInRange = false;
+    public bool isVisible = false;
     private bool movingRight = true;
 
     public GameObject player;
@@ -15,13 +15,14 @@ public class Patrol : MonoBehaviour
     public Transform groundDetect;
 
 
+
     void Update()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
         //Change to turn at fences instead of gaps 
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetect.position, Vector2.down, distance);
-        if(groundInfo.collider == false)
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetect.position, Vector2.right, distance);
+        if(groundInfo.collider.tag.Equals("Fence"))
         {
             if(movingRight == true)
             {
@@ -36,7 +37,7 @@ public class Patrol : MonoBehaviour
         }
 
         //Add check for if !hiding
-        if(isInRange && player.GetComponent<CharacterController2D>().isRunning)
+        if(isVisible && player.GetComponent<CharacterController2D>().isRunning)
         {
             StopAllCoroutines();
             StartCoroutine(Attack());
@@ -48,7 +49,7 @@ public class Patrol : MonoBehaviour
 
         if (collision.GetComponent<Collider2D>().CompareTag("Player"))
         {        
-            isInRange = true;
+            isVisible = true;
             player = collision.gameObject;
             if (collision.GetComponent<CharacterController2D>().isRunning)
             {
@@ -64,7 +65,7 @@ public class Patrol : MonoBehaviour
 
         if (collision.GetComponent<Collider2D>().CompareTag("Player"))
         {        
-            isInRange = false;
+            isVisible = false;
             StopAllCoroutines();
             StartCoroutine(CalmDown());
         }

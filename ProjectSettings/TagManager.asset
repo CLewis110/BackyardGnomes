@@ -9,6 +9,11 @@ TagManager:
   - Plantable
   - GM
   - Recyclable
+  - Fence
+  - Lawn Mower
+  - Flower
+  - Hideable
+  - Ground
   layers:
   - Default
   - TransparentFX

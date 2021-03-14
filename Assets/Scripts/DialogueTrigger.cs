@@ -8,7 +8,7 @@ public class DialogueTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.tag == "Player")
         {
                 TriggerDialogue();
         }
@@ -16,7 +16,7 @@ public class DialogueTrigger : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             EndDialogue();
         }
