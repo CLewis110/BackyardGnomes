@@ -7,7 +7,7 @@ public class Patrol : MonoBehaviour
     public float speed;
     public float distance;
 
-    public bool isVisible = false;
+    public bool isInRange = false;
     private bool movingRight = true;
 
     public GameObject player;
@@ -20,9 +20,9 @@ public class Patrol : MonoBehaviour
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
-        //Change to turn at fences instead of gaps 
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetect.position, Vector2.right, distance);
-        if(groundInfo.collider.tag.Equals("Fence"))
+        //Check for no ground to turn around
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundDetect.position, Vector2.down, distance, LayerMask.GetMask("Ground"));
+        if(groundInfo.collider == false)
         {
             if(movingRight == true)
             {
@@ -37,11 +37,13 @@ public class Patrol : MonoBehaviour
         }
 
         //Add check for if !hiding
-        if(isVisible && player.GetComponent<CharacterController2D>().isRunning)
+        
+        if(isInRange && !player.GetComponent<CharacterController2D>().isHiding)
         {
             StopAllCoroutines();
             StartCoroutine(Attack());
         }
+        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -49,13 +51,15 @@ public class Patrol : MonoBehaviour
 
         if (collision.GetComponent<Collider2D>().CompareTag("Player"))
         {        
-            isVisible = true;
+            isInRange = true;
             player = collision.gameObject;
+            /*
             if (collision.GetComponent<CharacterController2D>().isRunning)
             {
                 StopAllCoroutines();
                 StartCoroutine(Attack());
             }
+            */
 
         }
     }
@@ -65,21 +69,23 @@ public class Patrol : MonoBehaviour
 
         if (collision.GetComponent<Collider2D>().CompareTag("Player"))
         {        
-            isVisible = false;
-            StopAllCoroutines();
-            StartCoroutine(CalmDown());
+            isInRange = false;
+            player = null;
+            //StopAllCoroutines();
+            //StartCoroutine(CalmDown());
         }
     }
 
     IEnumerator Attack()
     {
         speed = 30f;
+        StartCoroutine(CalmDown());
         yield return null;
     }
 
     IEnumerator CalmDown()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         speed = 10f;
     }
 }

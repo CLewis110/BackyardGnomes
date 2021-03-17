@@ -92,5 +92,19 @@ public class CharacterController2D : MonoBehaviour
         Instantiate(seed, dropPoint.transform.position, dropPoint.transform.rotation);
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Hideable" || collision.gameObject.tag == "Flower")
+        {
+            isHiding = true;
+        }
+    }
 
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Hideable" || collision.gameObject.tag == "Flower")
+        {
+            isHiding = false;
+        }
+    }
 }

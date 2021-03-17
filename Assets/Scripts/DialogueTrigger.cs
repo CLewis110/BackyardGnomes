@@ -8,7 +8,7 @@ public class DialogueTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !collision.GetComponent<CharacterController2D>().isHiding)
         {
                 TriggerDialogue();
         }
@@ -16,7 +16,7 @@ public class DialogueTrigger : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !collision.GetComponent<CharacterController2D>().isHiding)
         {
             EndDialogue();
         }

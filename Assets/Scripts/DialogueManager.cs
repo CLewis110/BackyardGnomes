@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject portrait;
 
     public Animator anim;
+    public Animator charAnim;
 
     private Queue<string> sentences;
 
@@ -17,7 +18,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         sentences = new Queue<string>(); 
-        
+     
     }
 
 
@@ -34,9 +35,19 @@ public class DialogueManager : MonoBehaviour
 
         isTalking = true;
 
-        portrait.gameObject.GetComponent<Image>().sprite = dialogue.characterPic;
+        //portrait.gameObject.GetComponent<Image>().sprite = dialogue.characterPic;
 
         nameText.text = dialogue.name;
+
+        if (nameText.text == "Biker Bob")
+        {
+            charAnim.SetBool("isBikerBob", true);
+        }
+
+        if (nameText.text == "Norman Gnome")
+        {
+            charAnim.SetBool("isNormanGnome", true);
+        }
 
         sentences.Clear();
 
@@ -74,6 +85,13 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         anim.SetBool("isOpen", false);
+        DiablePortraitAnim();
         isTalking = false;
+    }
+
+    public void DiablePortraitAnim()
+    {
+        charAnim.SetBool("isBikerBob", false);
+        charAnim.SetBool("isNormanGnome", false);
     }
 }
