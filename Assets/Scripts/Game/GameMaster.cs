@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMaster : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameMaster : MonoBehaviour
     public Transform playerPrefab;
     public Transform spawnPoint;
     public float spawnDelay = 2f;
+
+    public GameObject deathScreen;
 
     void Start()
     {
@@ -32,5 +35,13 @@ public class GameMaster : MonoBehaviour
 
 
     //Keep track of score
+
+    //Restart level
+    public IEnumerator RestartLevel()
+    {
+        deathScreen.SetActive(true);
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
 }
