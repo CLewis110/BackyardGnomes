@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 881, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 37824
+  controlID: 46905
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 37825
+  controlID: 46906
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 37826
+  controlID: 46907
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,7 +221,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: c257ffffbe58ffff68daffff7adaffff04e9ffff62ebffff20fbffff7044000038450000ee8100008c820000
+      m_ExpandedIDs: ca27ffffb228fffff42effffc257ffff68daffff7adaffff18e8ffff04e9ffff62ebffff20fbffff7044000038450000fe80000068d80200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -308,9 +308,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2285.9285, y: 749.6132, z: -149.30183}
+    m_Target: {x: 162.46674, y: 8.445943, z: -1.5881765}
     speed: 2
-    m_Value: {x: 2285.9285, y: 749.6132, z: -149.30183}
+    m_Value: {x: 162.46674, y: 8.445943, z: -1.5881765}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -361,9 +361,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1723.5215
+    m_Target: 13.011691
     speed: 2
-    m_Value: 1723.5215
+    m_Value: 13.011691
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -537,7 +537,7 @@ MonoBehaviour:
   - {fileID: 14}
   - {fileID: 15}
   m_Selected: 0
-  m_LastSelected: 3
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -576,21 +576,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Art
+    - Assets/Scripts/Enemies
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Art
+  - Assets/Scripts/Enemies
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\lewic\Desktop\Game\Untitled Gnome Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 2e470000
-    m_LastClickedID: 18222
+    scrollPos: {x: 0, y: 69}
+    m_SelectedIDs: 2e880000
+    m_LastClickedID: 34862
     m_ExpandedIDs: 00000000224700003847000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -644,8 +644,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: bae8ffff
-    m_LastClickedInstanceID: -5958
+    m_SelectedInstanceIDs: 6a28ffff
+    m_LastClickedInstanceID: -55190
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000164100004e420000f0030100ee0504007a4c000082c90000724c00008c680000368c000080370000de3e0000003f0000f83e00000c3f00001e3f00006a3800003438000026380000684100000437000016710000e2420000fe410000e642000000000000
     m_RenameOverlay:
@@ -697,7 +697,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 744
-    width: 1478
+    width: 1627
     height: 255
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &14
@@ -753,7 +753,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -5958
+  m_LastSelectedObjectID: -55364
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -811,8 +811,8 @@ MonoBehaviour:
     m_CachedPref: 218
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -5958
-  m_LastVerticalScrollValue: 534
+  m_LastInspectedObjectInstanceID: -55190
+  m_LastVerticalScrollValue: 574
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0

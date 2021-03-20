@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     public Sprite fullHearts;
     public Sprite emptyHearts;
 
+    public CharacterController2D cc;
+
     public GameObject healthHearts;
 
     void Awake()
@@ -47,8 +49,10 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Lawn Mower")
         {
-            DamagePlayer(1);
+            if (cc.isHiding == false)
+                DamagePlayer(1);
         }
+
     }
 
     public void HeartCheck()
