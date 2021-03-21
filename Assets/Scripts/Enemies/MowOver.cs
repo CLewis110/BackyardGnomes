@@ -13,5 +13,5 @@ public class MowOver : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up  * mowForce, ForceMode2D.Impulse);
         }
     }
-
+    //github test
 }
