@@ -21,6 +21,10 @@ public class QuestManager : MonoBehaviour
     public int questsCompleted;
     public bool bothQuestsCompleted;
 
+    //Check is currently on quest
+    public bool onPlantingQuest;
+    public bool onRecyclingQuest;
+
     public GameMaster gm;
 
     void Start()
@@ -30,6 +34,8 @@ public class QuestManager : MonoBehaviour
 
         plantingDone = false;
         reclycingDone = false;
+        onPlantingQuest = false;
+        onRecyclingQuest = false;
 
         finishedQuest = "";
         questsCompleted = 0;
@@ -63,6 +69,7 @@ public class QuestManager : MonoBehaviour
         {
             if(!plantingDone)
             {
+                onPlantingQuest = true;
                 isAlreadyOnQuest = true;
                 questText.text = "Plant 30 Plants in the Garden:  " + gm.plantsPlanted + "/30";
             }
@@ -72,6 +79,7 @@ public class QuestManager : MonoBehaviour
         {
             if(!reclycingDone)
             {
+                onRecyclingQuest = true;
                 isAlreadyOnQuest = true;
                 questText.text = "Recycle 10 Pieces of Garbage:  " + gm.trashRecycled + "/10";
             }
@@ -100,6 +108,7 @@ public class QuestManager : MonoBehaviour
             {
                 StartCoroutine(QuestCompleted());
                 plantingDone = true;
+                onPlantingQuest = false;
             }
         }
         else if (quest == "recycle")
@@ -108,6 +117,7 @@ public class QuestManager : MonoBehaviour
             {
                 StartCoroutine(QuestCompleted());
                 reclycingDone = true;
+                onRecyclingQuest = false;
             }
         }
         else
@@ -119,8 +129,6 @@ public class QuestManager : MonoBehaviour
     public IEnumerator QuestCompleted()
     {
         isAlreadyOnQuest = false;
-        questText.text = "Quest Completed!";
-        yield return new WaitForSeconds(3);
 
         questsCompleted++;
         if (questsCompleted == 2)
@@ -130,7 +138,8 @@ public class QuestManager : MonoBehaviour
         }
         else
         {
-            questText.text = "";
+            questText.text = "Quest Completed!";
         }
-    }
+        yield return new WaitForSeconds(3);
+    }       
 }

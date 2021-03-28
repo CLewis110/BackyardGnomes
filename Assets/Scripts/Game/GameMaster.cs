@@ -83,16 +83,24 @@ public class GameMaster : MonoBehaviour
 
     public void AddPlant()
     {
-        plantsPlanted += 1;
-        qm.UpdateQuestText();
-        qm.CheckQuestCompleted();
+        if(qm.onPlantingQuest)
+        {
+            plantsPlanted += 1;
+            qm.UpdateQuestText();
+            qm.CheckQuestCompleted();
+        }
+
     }
 
     public void AddRecyclable()
     {
-        trashRecycled += 1;
-        qm.UpdateQuestText();
-        qm.CheckQuestCompleted();
+        if(qm.onRecyclingQuest)
+        {
+            trashRecycled += 1;
+            qm.UpdateQuestText();
+            qm.CheckQuestCompleted();
+        }
+
     }
 
 }
