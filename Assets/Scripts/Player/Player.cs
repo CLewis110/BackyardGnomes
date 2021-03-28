@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
 
-    [System.Serializable] 
-    
+    [System.Serializable]     
     public class PlayerStats { 
         public float Health = 3f;
     }
@@ -17,17 +16,20 @@ public class Player : MonoBehaviour
 
     public int fallBoundary = -40;
 
+    //Health system
     public int numOfHearts;
     public Image[] Hearts;
     public Sprite fullHearts;
     public Sprite emptyHearts;
+    public GameObject healthHearts;
 
     public CharacterController2D cc;
 
-    public GameObject healthHearts;
+    public int seeds;
 
     void Awake()
     {
+        seeds = 0;
         playerStats.Health = 3f;
     }
     void Update()
@@ -87,6 +89,16 @@ public class Player : MonoBehaviour
                 Hearts[i].enabled = false;
             }
         }
+    }
+
+    public void AddSeed()
+    {
+        seeds += 1;
+    }
+
+    public void SubtractSeed()
+    {
+        seeds -= 1;
     }
 
 }

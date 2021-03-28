@@ -25,19 +25,17 @@ public class CharacterController2D : MonoBehaviour
     public GameObject seed;
     public Transform dropPoint;
 
+    public Player player;
+
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<Player>();
         rb = GetComponent<Rigidbody2D>();
     }
 
    
     void Update()
     {
-        //Escape program
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
@@ -78,7 +76,7 @@ public class CharacterController2D : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
             Jump();
 
-        //Check hiding requirements
+
 
     }
 
@@ -89,7 +87,13 @@ public class CharacterController2D : MonoBehaviour
 
     void DropSeed()
     {
-        Instantiate(seed, dropPoint.transform.position, dropPoint.transform.rotation);
+        if(player.seeds > 0)
+        {
+            Instantiate(seed, dropPoint.transform.position, dropPoint.transform.rotation);
+            player.SubtractSeed();
+        }
+
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)

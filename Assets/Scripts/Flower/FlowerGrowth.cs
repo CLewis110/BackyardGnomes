@@ -14,6 +14,7 @@ public class FlowerGrowth : MonoBehaviour
 
     private bool isMaxSize = false;
 
+    public GameMaster gm;
 
     void Start()
     {
