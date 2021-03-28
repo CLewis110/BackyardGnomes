@@ -7,11 +7,13 @@ using UnityEngine.UI;
 public class Dialogue 
 {
     public string name;
+    public string quest;
 
     [TextArea(3, 10)]
     public string[] sentences;
 
     public Sprite characterPic;
+
 
 
 }

@@ -15,12 +15,23 @@ public class GameMaster : MonoBehaviour
 
     public GameObject deathScreen;
 
+    public QuestManager qm;
+
     [SerializeField] TextMeshProUGUI ScoreText;
     public int score;
 
+    public int plantsPlanted;
+    public int trashRecycled;
+
     void Start()
     {
+        qm = GameObject.Find("Quest Manager").GetComponent<QuestManager>();
+
+        plantsPlanted = 0;
+        trashRecycled = 0;
+
         ScoreText.text = "Score: 0";
+
         if(gm == null)
         {
             gm = this;
@@ -56,7 +67,6 @@ public class GameMaster : MonoBehaviour
     //Keep track of score
     public void AddPoints(int points)
     {
-        Debug.Log("Point!");
         score += points;
         ScoreText.text = "Score:    " + score.ToString();
     }
@@ -69,6 +79,20 @@ public class GameMaster : MonoBehaviour
         deathScreen.SetActive(true);
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void AddPlant()
+    {
+        plantsPlanted += 1;
+        qm.UpdateQuestText();
+        qm.CheckQuestCompleted();
+    }
+
+    public void AddRecyclable()
+    {
+        trashRecycled += 1;
+        qm.UpdateQuestText();
+        qm.CheckQuestCompleted();
     }
 
 }

@@ -17,6 +17,7 @@ public class PleaseRecycle : MonoBehaviour
         {        
             //Add points
             gm.AddPoints(20);
+            gm.AddRecyclable();
             Recycle();
         }
     }

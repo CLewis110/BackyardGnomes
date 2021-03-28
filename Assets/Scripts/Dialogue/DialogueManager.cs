@@ -14,9 +14,12 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
 
+    public QuestManager qm;
+
     public bool isTalking = false;
     void Start()
     {
+        qm = GameObject.Find("Quest Manager").GetComponent<QuestManager>();
         sentences = new Queue<string>(); 
     }
 
@@ -28,9 +31,15 @@ public class DialogueManager : MonoBehaviour
             DisplayNextSentence();
         }
     }
+
     public void StartDialogue(Dialogue dialogue)
     {
         //portrait.gameObject.GetComponent<Image>().sprite = dialogue.characterPic;
+        if(dialogue.quest != "")
+        {
+            qm.CheckIfOnQuest(dialogue.quest);
+        }
+
 
         nameText.text = dialogue.name;
 

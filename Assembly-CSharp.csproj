@@ -56,12 +56,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Menu\TitleScreen.cs" />
     <Compile Include="Assets\Scripts\Enemies\BirdAI.cs" />
     <Compile Include="Assets\Scripts\Camera\CamFollow.cs" />
     <Compile Include="Assets\Scripts\Enemies\MowOver.cs" />
     <Compile Include="Assets\Scripts\Timer\CountDownTimer.cs" />
     <Compile Include="Assets\Scripts\Mechanics\SeedPlant.cs" />
     <Compile Include="Assets\Scripts\Mechanics\PleaseRecycle.cs" />
+    <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Dialogue.cs" />
     <Compile Include="Assets\Scripts\Camera\Parallax.cs" />
     <Compile Include="Assets\Scripts\Player\CharacterController2D.cs" />
@@ -75,8 +77,7 @@
     <Compile Include="Assets\Scripts\Player\GrabConroller.cs" />
     <Compile Include="Assets\Scripts\Game\GameMaster.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueTrigger.cs" />
-    <Compile Include="Assets\Scripts\Menu\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\Menu\TitleScreen.cs" />
+    <Compile Include="Assets\Scripts\Quests\QuestManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

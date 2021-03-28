@@ -16,6 +16,7 @@ public class SeedPlant : MonoBehaviour
     {        
         if (collision.gameObject.tag == "Garden")
         {
+            gm.AddPlant();
             gm.AddPoints(20);
         }
         if(collision.gameObject.tag == "Plantable")
