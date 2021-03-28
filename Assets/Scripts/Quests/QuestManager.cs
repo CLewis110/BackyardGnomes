@@ -18,6 +18,9 @@ public class QuestManager : MonoBehaviour
     public bool reclycingDone;
     public string finishedQuest;
 
+    public int questsCompleted;
+    public bool bothQuestsCompleted;
+
     public GameMaster gm;
 
     void Start()
@@ -29,6 +32,7 @@ public class QuestManager : MonoBehaviour
         reclycingDone = false;
 
         finishedQuest = "";
+        questsCompleted = 0;
 
         questText.text = "";
 
@@ -117,6 +121,16 @@ public class QuestManager : MonoBehaviour
         isAlreadyOnQuest = false;
         questText.text = "Quest Completed!";
         yield return new WaitForSeconds(3);
-        questText.text = "";
+
+        questsCompleted++;
+        if (questsCompleted == 2)
+        {
+            bothQuestsCompleted = true;
+            questText.text = "Both Quests Completed!!";
+        }
+        else
+        {
+            questText.text = "";
+        }
     }
 }
