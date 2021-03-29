@@ -141,5 +141,6 @@ public class QuestManager : MonoBehaviour
             questText.text = "Quest Completed!";
         }
         yield return new WaitForSeconds(3);
+        questText.text = "";
     }       
 }

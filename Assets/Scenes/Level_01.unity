@@ -370,11 +370,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 406011373754425026, guid: 9072e02439bbee548b0d03e27be5417f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 302.20004
+      value: 103.90001
       objectReference: {fileID: 0}
     - target: {fileID: 406011373754425026, guid: 9072e02439bbee548b0d03e27be5417f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.5364
+      value: 19.300001
       objectReference: {fileID: 0}
     - target: {fileID: 406011373754425026, guid: 9072e02439bbee548b0d03e27be5417f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -959,8 +959,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -240.5701, y: 146.00005}
-  m_SizeDelta: {x: 273.6846, y: 30}
+  m_AnchoredPosition: {x: -201.0835, y: 146.00005}
+  m_SizeDelta: {x: 352.6578, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &70173370
 MonoBehaviour:
@@ -4091,6 +4091,13 @@ MonoBehaviour:
   isAlreadyOnQuest: 0
   plantsRequired: 30
   recyclablesRequired: 10
+  plantingDone: 0
+  reclycingDone: 0
+  finishedQuest: 
+  questsCompleted: 0
+  bothQuestsCompleted: 0
+  onPlantingQuest: 0
+  onRecyclingQuest: 0
   gm: {fileID: 0}
 --- !u!1001 &482386166
 PrefabInstance:
@@ -6439,7 +6446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1125938558829315517, guid: 1de0b3a549f62ea469ec76789012a2de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 51.2
+      value: 72.1
       objectReference: {fileID: 0}
     - target: {fileID: 1125938558829315517, guid: 1de0b3a549f62ea469ec76789012a2de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9890,7 +9897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423127660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 437.07266, y: -7.31, z: 0.094565935}
+  m_LocalPosition: {x: 156.6, y: -0.6, z: 0.094565935}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 646874874}
@@ -14631,7 +14638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2008324528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14702,11 +14709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 406011373754425026, guid: 9072e02439bbee548b0d03e27be5417f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 323.80002
+      value: 103.8
       objectReference: {fileID: 0}
     - target: {fileID: 406011373754425026, guid: 9072e02439bbee548b0d03e27be5417f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.5364
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 406011373754425026, guid: 9072e02439bbee548b0d03e27be5417f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15667,11 +15674,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 406011373754425026, guid: 9072e02439bbee548b0d03e27be5417f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 424.2726
+      value: 99.9
       objectReference: {fileID: 0}
     - target: {fileID: 406011373754425026, guid: 9072e02439bbee548b0d03e27be5417f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.990003
+      value: 52.2
       objectReference: {fileID: 0}
     - target: {fileID: 406011373754425026, guid: 9072e02439bbee548b0d03e27be5417f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16175,11 +16182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4971638836796090247, guid: 5e6c91e7d2cd6444399c44cc958370ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 428.67264
+      value: 152.4
       objectReference: {fileID: 0}
     - target: {fileID: 4971638836796090247, guid: 5e6c91e7d2cd6444399c44cc958370ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.39
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 4971638836796090247, guid: 5e6c91e7d2cd6444399c44cc958370ec, type: 3}
       propertyPath: m_LocalPosition.z
