@@ -827,3 +827,11 @@ Received Import Request.
 Start importing Assets/Scripts/Dialogue/DialogueManager.cs using Guid(20dcde331362bd746a0645699bab0d3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a17a14478d335360470ad12dd3e02c3') in 0.003178 seconds
   Import took 0.006525 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 822.714856 seconds.
+  path: Assets/_TerrainAutoUpgrade/layer_checkerGround3d3aba195e4d26ee.terrainlayer
+  artifactKey: Guid(76170daf930bc1549902843cb20c4230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/_TerrainAutoUpgrade/layer_checkerGround3d3aba195e4d26ee.terrainlayer using Guid(76170daf930bc1549902843cb20c4230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3fca817a2a94d3cb9a20d3e9d4cc266') in 0.060536 seconds
+  Import took 0.064966 seconds .
+
