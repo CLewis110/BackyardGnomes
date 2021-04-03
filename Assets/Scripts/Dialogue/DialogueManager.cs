@@ -17,8 +17,17 @@ public class DialogueManager : MonoBehaviour
     public QuestManager qm;
 
     public bool isTalking = false;
+
+    //Dialogue Zoom
+    private float camZoom = 7f;
+    private float camNorm = 21f;
+    private float zoomTime = 3f;
+    public float smooth;
+    private float currentCam;
+
     void Start()
     {
+        currentCam = Camera.main.orthographicSize;
         qm = GameObject.Find("Quest Manager").GetComponent<QuestManager>();
         sentences = new Queue<string>(); 
     }
@@ -30,11 +39,21 @@ public class DialogueManager : MonoBehaviour
         {
             DisplayNextSentence();
         }
+
+        if(isTalking  && currentCam > camZoom)
+        {
+            CamZoom();
+        }
+        if(!isTalking && currentCam < camNorm)
+        {
+            CamZoomOut();
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
         //portrait.gameObject.GetComponent<Image>().sprite = dialogue.characterPic;
+
         if(dialogue.quest != "")
         {
             qm.CheckIfOnQuest(dialogue.quest);
@@ -101,5 +120,17 @@ public class DialogueManager : MonoBehaviour
     {
         charAnim.SetBool("isBikerBob", false);
         charAnim.SetBool("isNormanGnome", false);
+    }
+
+    public void CamZoom()
+    {
+        currentCam -= (smooth * Time.deltaTime);
+        Camera.main.orthographicSize = currentCam;
+    }
+
+    public void CamZoomOut()
+    {
+        currentCam += (smooth * Time.deltaTime);
+        Camera.main.orthographicSize = currentCam;
     }
 }
