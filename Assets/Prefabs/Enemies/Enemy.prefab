@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 2987795622759904039}
   - component: {fileID: 2987795622759904032}
   - component: {fileID: 9110993855079291511}
-  - component: {fileID: 84570194}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -191,23 +190,6 @@ MonoBehaviour:
   isInRange: 0
   player: {fileID: 0}
   groundDetect: {fileID: 1774073316}
---- !u!114 &84570194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2987795622759904038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb3abe70a52b9543b054e1ed2871425, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Mower
-    quest: 
-    sentences: []
-    characterPic: {fileID: 21300000, guid: 2274551def729d246bd49157a37f0ae0, type: 3}
 --- !u!1 &8999330121615704291
 GameObject:
   m_ObjectHideFlags: 0
