@@ -132,10 +132,10 @@ public class QuestManager : MonoBehaviour
         isAlreadyOnQuest = false;
 
         questsCompleted++;
-        if (questsCompleted == 2)
+        if (questsCompleted == 1)
         {
             bothQuestsCompleted = true;
-            questText.text = "Both Quests Completed!!";
+            questText.text = "Quests Completed!!";
         }
         else
         {

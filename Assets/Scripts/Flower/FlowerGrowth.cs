@@ -6,18 +6,18 @@ public class FlowerGrowth : MonoBehaviour
 {
     private float timer = 0f;
     private float growTime = 6f;
-    private float maxSize = 1f;
+    private float maxSize = 3f;
     public float flowerLife = 2f;
 
     //height
-    public float maxHeight = -0.5f;
+    public float maxHeight;
 
     private bool isMaxSize = false;
 
-    public GameMaster gm;
 
     void Start()
     {
+        maxHeight = transform.position.y + 4f;
         if (isMaxSize == false)
         {
             StartCoroutine(Grow());
@@ -36,16 +36,16 @@ public class FlowerGrowth : MonoBehaviour
     private IEnumerator Grow()
     {
         Vector2 startScale = transform.localScale;
-        Vector2 maxScale = new Vector2(maxSize, maxSize);
+        Vector2 maxScale = new Vector2( maxSize, maxSize);
 
         //height
-        Vector2 startHeight = transform.position;
-        Vector2 finalHeight = new Vector2(transform.position.x, maxHeight);
+        Vector2 startHeight = transform.localPosition;
+        Vector2 finalHeight = new Vector2(transform.localPosition.x, maxHeight);
 
 
         do
         {
-            transform.position = Vector3.Lerp(startHeight, finalHeight, timer / growTime);
+            transform.localPosition = Vector3.Lerp(startHeight, finalHeight, timer / growTime);
             transform.localScale = Vector3.Lerp(startScale, maxScale, timer / growTime);
             timer += Time.deltaTime;
             yield return null;

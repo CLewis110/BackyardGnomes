@@ -78,7 +78,7 @@ public class DayNightSystem2D : MonoBehaviour
      void Update()
      {
         // Update cycle time
-        cycleCurrentTime += Time.deltaTime;
+        //cycleCurrentTime += Time.deltaTime;
 
         // Check if cycle time reach cycle duration time
         if (cycleCurrentTime >= cycleMaxTime) 
