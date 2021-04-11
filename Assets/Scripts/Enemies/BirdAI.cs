@@ -30,9 +30,14 @@ public class BirdAI : MonoBehaviour
 
     private bool searchingForPlayer = false;
     private bool isInRange = false;
-    public bool flowersInRange = false;
     public bool playerInRange = false;
 
+    //Bread
+    public bool breadInRange = false;
+    public GameObject currentBread;
+
+    //Flower
+    public bool flowersInRange = false;
     public GameObject currentFlower;
 
     public GameObject sResult;
@@ -64,13 +69,19 @@ public class BirdAI : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Flower")
+        if (collision.gameObject.tag == "Bread")
+        {
+            currentBread = collision.gameObject;
+            target = collision.transform;
+        }
+
+        if (collision.gameObject.tag == "Flower" && currentBread == null)
         {
             currentFlower = collision.gameObject;
             target = collision.transform;
         }
 
-        if(collision.gameObject.tag == "Player" && currentFlower == null)
+        if(collision.gameObject.tag == "Player" && currentFlower == null && currentBread == null)
         {
             playerInRange = true;
             target = collision.transform;
@@ -107,6 +118,11 @@ public class BirdAI : MonoBehaviour
         }
 
         if (collision.gameObject.tag == "Player")
+        {
+            playerInRange = false;
+        }
+
+        if (collision.gameObject.tag == "Bread")
         {
             playerInRange = false;
         }

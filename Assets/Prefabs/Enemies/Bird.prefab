@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 123485096304424647}
   - component: {fileID: 1198740278}
   - component: {fileID: 102162547}
+  - component: {fileID: 1125668793}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -154,8 +155,10 @@ MonoBehaviour:
   fMode: 0
   pathIsEnded: 0
   nextWaypointDist: 2
-  flowersInRange: 0
   playerInRange: 0
+  breadInRange: 0
+  currentBread: {fileID: 0}
+  flowersInRange: 0
   currentFlower: {fileID: 0}
   sResult: {fileID: 0}
 --- !u!61 &1198740278
@@ -203,3 +206,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1125668793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123485096304424644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474f570eac3b87b489a6f0b6cc2ce217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx: {fileID: 0}

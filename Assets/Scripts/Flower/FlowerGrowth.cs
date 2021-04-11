@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlowerGrowth : MonoBehaviour
 {
     private float timer = 0f;
-    private float growTime = 6f;
+    private float growTime = 1.5f;
     private float maxSize = 3f;
     public float flowerLife = 2f;
 

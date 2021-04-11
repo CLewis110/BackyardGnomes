@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour
     public float smooth;
     private float currentCam;
 
+   
+
     void Start()
     {
         currentCam = Camera.main.orthographicSize;
@@ -52,7 +54,6 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        //portrait.gameObject.GetComponent<Image>().sprite = dialogue.characterPic;
 
         if(dialogue.quest != "")
         {

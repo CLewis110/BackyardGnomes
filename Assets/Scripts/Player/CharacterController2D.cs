@@ -13,6 +13,9 @@ public class CharacterController2D : MonoBehaviour
     //Hiding
     public bool isHiding = false;
     
+    public float throwForce = 3f;
+    public int direction = 0;
+
     //Ground Check
     public bool isGrounded;
     public Transform groundCheck;
@@ -24,6 +27,9 @@ public class CharacterController2D : MonoBehaviour
     //Seed prefab
     public GameObject seed;
     public Transform dropPoint;
+
+    //Bread prefab
+    public GameObject bread;
 
     public Player player;
 
@@ -39,6 +45,10 @@ public class CharacterController2D : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
+        if (isFacingRight)
+            direction = 1;
+        else
+            direction = -1;
 
         //Read movement
         var movement = Input.GetAxis("Horizontal");
@@ -72,12 +82,20 @@ public class CharacterController2D : MonoBehaviour
             DropSeed();
         }
 
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ThrowBread();
+        }
+
         //Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
             Jump();
+    }
 
-
-
+    void ThrowBread()
+    {
+        GameObject breadToThrow = Instantiate(bread, transform.position, Quaternion.identity);
+        breadToThrow.GetComponent<Rigidbody2D>().velocity = new Vector2(transform.localScale.x * direction, 1) * throwForce;
     }
 
     void Jump()

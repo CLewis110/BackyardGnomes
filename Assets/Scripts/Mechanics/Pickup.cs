@@ -6,6 +6,7 @@ public class Pickup : MonoBehaviour
 {
 
     public Player player;
+    public AudioSource audio1;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class Pickup : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            audio1.Play();
             player.AddSeed();
             Destroy(gameObject);
         }
